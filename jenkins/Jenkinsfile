@@ -11,12 +11,12 @@ pipeline {
     stages {
         stage('clear cache') {
             steps {
-                sh 'npm cache clean --force'
+                sh 'sudo npm cache clean --force'
             }
         }
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'sudo npm install'
             }
         }
         stage('Test') {
