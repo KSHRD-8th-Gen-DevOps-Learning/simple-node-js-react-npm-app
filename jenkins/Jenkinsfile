@@ -9,6 +9,11 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('clear cache') {
+            steps {
+                sh 'npm cache clean --force'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
